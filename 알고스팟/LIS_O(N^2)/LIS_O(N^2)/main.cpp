@@ -11,7 +11,7 @@ int list[MAX_SIZE];
 int length;
 
 int lis(int pos) {
-	int& ret = cache[pos];
+	int& ret = cache[pos + 1];
 
 	if (ret != -1)
 		return ret;
@@ -31,7 +31,7 @@ int main() {
 	int c; // #case num
 
 	cin >> c;
-	
+
 	vector<int> ret;
 
 	for (int i = 0; i < c; i++) {
@@ -46,9 +46,10 @@ int main() {
 
 
 		int maxLen = 0;
-		for (int k = 0; k < length - 1; k++) {
+		maxLen = lis(-1) - 1;
+	/*	for (int k = 0; k < length - 1; k++) {
 			maxLen = max(lis(k), maxLen);
-		}
+		}*/
 		ret.push_back(maxLen);
 	}
 
