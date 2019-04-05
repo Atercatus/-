@@ -33,6 +33,10 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
         }
         
         answer++;
+
+    
+
+        
     }
     
     return answer;
