@@ -83,6 +83,9 @@ int main() {
 		cin >> str_pi;
 
 		ret.push_back(memorize(0));
+
+		for (int j = 0; j < str_pi.size(); j++)
+			cout << cache[j] << endl;
 	}
 
 	for (int i = 0; i < ret.size(); i++)
