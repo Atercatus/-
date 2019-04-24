@@ -15,7 +15,7 @@ long long findNoNoSquare(long long min, long long max) {
 		long long square = i * i;
 		long long start = min;
 		if (start % square != 0) {
-			start = (start / square + 1) * square;
+			start = ((start / square) + 1) * square;
 		}
 
 		for (long long next = start; next <= max; next += square) {
