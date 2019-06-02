@@ -15,17 +15,6 @@ int towns[MAX_SIZE_TOWNS];
 bool connected[MAX_SIZE_TOWNS][MAX_SIZE_TOWNS];
 int deg[MAX_SIZE_TOWNS];
 
-void set_deg() {
-	for (int i = 0; i < num_of_towns; i++) {
-		deg[i] = 0;
-		for (int j = 0; j < num_of_towns; j++) {
-			if (connected[i][j]) {
-				deg[i]++;
-			}
-		}
-	}
-}
-
 double find_dunibal(int town, int days) {
 	if (days == max_days) {
 		return town == target ? 1.0 : 0.0;
@@ -41,7 +30,7 @@ double find_dunibal(int town, int days) {
 
 	for (int next = 0; next < num_of_towns; next++) {
 		if (connected[town][next]) {
-			ret += find_dunibal(next, days + 1) / (double)deg[town];
+			ret += find_dunibal(next, days + 1) / deg[town];
 		}
 	}
 
@@ -57,18 +46,16 @@ int main() {
 	cin >> num_of_cases;
 
 	for (int i = 0; i < num_of_cases; i++) {
-		for (int k = 0; k < MAX_SIZE_TOWNS; k++) {
-			for (int l = 0; l < MAX_SIZE_TOWNS; l++) {
-				connected[k][l] = false;
-			}
-		}
 		cin >> num_of_towns >> max_days >> prison;
 		for (int j = 0; j < num_of_towns; j++) {
+			deg[j] = 0;
 			for (int k = 0; k < num_of_towns; k++) {
 				cin >> connected[j][k];
+				if (connected[j][k]) {
+					deg[j]++;
+				}
 			}
 		}
-		set_deg();
 
 		cin >> num_of_targets;
 		vector<double> temp;
