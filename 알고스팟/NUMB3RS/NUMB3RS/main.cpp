@@ -11,7 +11,7 @@ int target;
 int max_days;
 
 double cache[MAX_SIZE_TOWNS][MAX_SIZE_DAYS];
-int towns[MAX_SIZE_TOWNS];
+//int towns[MAX_SIZE_TOWNS];
 bool connected[MAX_SIZE_TOWNS][MAX_SIZE_TOWNS];
 int deg[MAX_SIZE_TOWNS];
 
