@@ -71,7 +71,7 @@ int main() {
 		ret.push_back(temp);
 	}
 
-	for (int y = 0; y < ret.size(); y++) {
+	for (int y = 0; y < ret.size(); y++) {	
 		for (int x = 0; x < ret[y].size(); x++) {
 			cout << setprecision(8) << ret[y][x] << " ";
 		}
