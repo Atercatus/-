@@ -70,8 +70,7 @@ int main() {
 			if (strcmp(buf, "goes") != 0)
 				break;
 
-			scanf("%s", bleats[totalTypes]);
-			totalTypes++;
+			scanf("%s", bleats[totalTypes++]);
 		}
 
 		scanf("%s %s %s", buf, buf, buf);
